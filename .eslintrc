@@ -2,9 +2,7 @@
   "root": true,
   "parser": "babel-eslint",
   "extends": "airbnb",
-  "plugins": [
-    "flowtype"
-  ],
+  "plugins": [],
   "env": {
     "browser": true,
     "es6": true,
@@ -15,6 +13,20 @@
     "defaultParams": true
   },
   "rules": {
-    "react/jsx-filename-extension": 0
+    "react/jsx-filename-extension": 0,
+
+    "no-confusing-arrow": 0,
+
+    "max-len": [
+      "error",
+      {
+        "ignoreComments": false,
+        "ignoreStrings": true,
+        "code": 80
+      }
+    ],
+
+    // Going hipster
+    "semi": [2, "never"]
   }
 }

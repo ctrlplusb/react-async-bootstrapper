@@ -1,7 +1,5 @@
-/* @flow */
-
 function goodbyeWorld() {
-  return 'goodbye world';
+  return 'goodbye world'
 }
 
-export default goodbyeWorld;
+export default goodbyeWorld
