@@ -2,9 +2,7 @@
   "root": true,
   "parser": "babel-eslint",
   "extends": "airbnb-base",
-  "plugins": [
-    "flowtype"
-  ],
+  "plugins": [],
   "env": {
     "browser": true,
     "es6": true,
@@ -14,5 +12,19 @@
   "ecmaFeatures": {
     "defaultParams": true
   },
-  "rules": {}
+  "rules": {
+    "no-confusing-arrow": 0,
+
+    "max-len": [
+      "error",
+      {
+        "ignoreComments": false,
+        "ignoreStrings": true,
+        "code": 80
+      }
+    ],
+
+    // Going hipster
+    "semi": [2, "never"]
+  }
 }

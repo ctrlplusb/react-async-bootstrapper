@@ -3,10 +3,6 @@
     ["env", { "targets": { "node": true } }],
     "stage-3"
   ],
-  "plugins": [
-    "syntax-flow",
-    "transform-flow-strip-types"
-  ],
   "env": {
     "commonjs": {
       "presets": [
