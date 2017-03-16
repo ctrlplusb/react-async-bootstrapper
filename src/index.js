@@ -1,9 +1,9 @@
 import reactTreeWalker from 'react-tree-walker'
 
-export default function asyncResolver(app) {
+export default function asyncBootstrapper(app) {
   const visitor = (element, instance) => {
-    if (instance && typeof instance.reactAsyncResolverTarget === 'function') {
-      return instance.reactAsyncResolverTarget()
+    if (instance && typeof instance.asyncBootstrapperTarget === 'function') {
+      return instance.asyncBootstrapperTarget()
     }
     return true
   }
