@@ -3645,16 +3645,6 @@ p-locate@^2.0.0:
   dependencies:
     p-limit "^1.1.0"
 
-p-map-series@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/p-map-series/-/p-map-series-1.0.0.tgz#bf98fe575705658a9e1351befb85ae4c1f07bdca"
-  dependencies:
-    p-reduce "^1.0.0"
-
-p-reduce@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/p-reduce/-/p-reduce-1.0.0.tgz#18c2b0dd936a4690a529f8231f58a0fdb6a47dfa"
-
 pako@~0.2.0:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/pako/-/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"
@@ -3938,11 +3928,9 @@ react-dom@15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-react-tree-walker@2.0.0-alpha.2:
-  version "2.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react-tree-walker/-/react-tree-walker-2.0.0-alpha.2.tgz#c5d9ddb80b8fc0102777d374b91739483169e472"
-  dependencies:
-    p-map-series "^1.0.0"
+react-tree-walker@^2.0.0-alpha.3:
+  version "2.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/react-tree-walker/-/react-tree-walker-2.0.0-alpha.3.tgz#c22665646825c706534c4715d79de42cf7d5d1e5"
 
 react@15.4.2:
   version "15.4.2"

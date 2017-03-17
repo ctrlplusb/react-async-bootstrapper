@@ -63,13 +63,7 @@ function webpackConfigFactory({ target }) {
         {
           test: /\.js$/,
           loader: 'babel-loader',
-          include: [
-            resolvePath(appRootDir.get(), './src'),
-            resolvePath(appRootDir.get(), './node_modules/p-limit'),
-            resolvePath(appRootDir.get(), './node_modules/p-locate'),
-            resolvePath(appRootDir.get(), './node_modules/p-map-series'),
-            resolvePath(appRootDir.get(), './node_modules/p-reduce'),
-          ],
+          include: [resolvePath(appRootDir.get(), './src')],
         },
       ],
     },
