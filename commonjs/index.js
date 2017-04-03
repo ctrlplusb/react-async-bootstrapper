@@ -1,0 +1,27 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = asyncBootstrapper;
+
+var _reactTreeWalker = require('react-tree-walker');
+
+var _reactTreeWalker2 = _interopRequireDefault(_reactTreeWalker);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function asyncBootstrapper(app) {
+  var visitor = function visitor(element, instance) {
+    if (instance && typeof instance.asyncBootstrap === 'function') {
+      return instance.asyncBootstrap();
+    }
+    return true;
+  };
+
+  return (0, _reactTreeWalker2.default)(app, visitor, {})
+  // Swallow errors.
+  .catch(function () {
+    return undefined;
+  });
+}
