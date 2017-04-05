@@ -243,6 +243,10 @@ function reactTreeWalker(element, visitor, context) {
         return element.props && element.props.children ? element.props.children : undefined;
       }, visitor(element, null, context), context, true);
     }
+  }).catch(function (err) {
+    // We don't want errors to be swallowed!
+    console.error('Error walking your react tree');
+    console.error(err);
   });
 }
 
@@ -272,11 +276,7 @@ function asyncBootstrapper(app) {
     return true;
   };
 
-  return (0, _reactTreeWalker2.default)(app, visitor, {})
-  // Swallow errors.
-  .catch(function () {
-    return undefined;
-  });
+  return (0, _reactTreeWalker2.default)(app, visitor, {});
 }
 
 /***/ }),

@@ -19,9 +19,5 @@ function asyncBootstrapper(app) {
     return true;
   };
 
-  return (0, _reactTreeWalker2.default)(app, visitor, {})
-  // Swallow errors.
-  .catch(function () {
-    return undefined;
-  });
+  return (0, _reactTreeWalker2.default)(app, visitor, {});
 }
