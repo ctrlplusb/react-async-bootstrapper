@@ -3936,9 +3936,9 @@ react-dom@15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-react-tree-walker@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-tree-walker/-/react-tree-walker-2.0.0.tgz#7eb739b6d45bf5260d1141dd2bfbab680e5d7276"
+react-tree-walker@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-tree-walker/-/react-tree-walker-2.0.1.tgz#42141f1e4564f6ab0adbdf6054b221092338cfd1"
 
 react@15.4.2:
   version "15.4.2"

@@ -8,9 +8,5 @@ export default function asyncBootstrapper(app) {
     return true
   }
 
-  return (
-    reactTreeWalker(app, visitor, {})
-      // Swallow errors.
-      .catch(() => undefined)
-  )
+  return reactTreeWalker(app, visitor, {})
 }

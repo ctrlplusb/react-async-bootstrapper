@@ -1,6 +1,6 @@
 {
   "name": "react-async-bootstrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides the ability to execute async bootstrapper functions within your React element tree.",
   "license": "MIT",
   "main": "commonjs/index.js",
@@ -92,6 +92,6 @@
     "webpack-hot-middleware": "2.18.0"
   },
   "dependencies": {
-    "react-tree-walker": "^2.0.0"
+    "react-tree-walker": "^2.0.1"
   }
 }
