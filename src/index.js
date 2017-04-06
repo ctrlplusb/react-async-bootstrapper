@@ -1,6 +1,6 @@
 import reactTreeWalker from 'react-tree-walker'
 
-export default function asyncBootstrapper(app) {
+export default function asyncBootstrapper(app, options) {
   const visitor = (element, instance) => {
     if (instance && typeof instance.asyncBootstrap === 'function') {
       return instance.asyncBootstrap()
@@ -8,5 +8,5 @@ export default function asyncBootstrapper(app) {
     return true
   }
 
-  return reactTreeWalker(app, visitor, {})
+  return reactTreeWalker(app, visitor, {}, options)
 }

@@ -91,6 +91,6 @@
     "webpack-hot-middleware": "2.18.0"
   },
   "dependencies": {
-    "react-tree-walker": "^2.0.1"
+    "react-tree-walker": "^2.1.0"
   }
 }
