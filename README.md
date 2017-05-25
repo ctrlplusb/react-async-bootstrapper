@@ -72,7 +72,7 @@ asyncBootstrapper(app).then(() => {
 })
 ```
 
-Zing.  You can do anything you like.  And interplay with other libaries that support `react-async-bootstrapper`, such as [`react-async-component`](https://github/ctrlplusb/react-async-component) which provides code splitting support.
+Zing.  You can do anything you like.  And interplay with other libaries that support `react-async-bootstrapper`, such as [`react-async-component`](https://github.com/ctrlplusb/react-async-component) which provides code splitting support.
 
 ## FAQs
 
