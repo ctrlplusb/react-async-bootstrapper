@@ -14,7 +14,7 @@ Provides the ability to execute async bootstrapper functions within your React e
 
 ## Introduction
 
-This library is an abstraction of [`react-tree-walker`](https://github/ctrlplusb/react-tree-walker), that allows you to attach an `asyncBootstrap` member to your React components.
+This library is an abstraction of [`react-tree-walker`](https://github.com/ctrlplusb/react-tree-walker), that allows you to attach an `asyncBootstrap` member to your React components.
 
 Within the `asyncBootstrap` you can do any work/bootstrapping that you like and then return a `Promise` that should resolve to either `true` (which indicates back to the bootstrapping process that it should continue down the current branch of your application in order to locate and resolve any nested `asyncBootstrap` instances), or `false` (which indicates that traversal of the current branch of your application can stop).
 
