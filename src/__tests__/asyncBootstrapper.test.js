@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 import React, { Component } from 'react'
 import asyncBootstrapper from '../'
 
@@ -29,6 +31,7 @@ describe('asyncBootstrapper()', () => {
     )
 
     return asyncBootstrapper(app).then(() =>
-      expect(values).toEqual([1, 2, 4, 3]))
+      expect(values).toEqual([1, 2, 4, 3]),
+    )
   })
 })
