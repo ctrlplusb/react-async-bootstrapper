@@ -16,9 +16,9 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -42,9 +42,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
 /******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
@@ -73,11 +70,40 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = asyncBootstrapper;
+
+var _reactTreeWalker = __webpack_require__(1);
+
+var _reactTreeWalker2 = _interopRequireDefault(_reactTreeWalker);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function asyncBootstrapper(app, options) {
+  var visitor = function visitor(element, instance) {
+    if (instance && typeof instance.asyncBootstrap === 'function') {
+      return instance.asyncBootstrap();
+    }
+    return true;
+  };
+
+  return (0, _reactTreeWalker2.default)(app, visitor, {}, options);
+}
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93,11 +119,10 @@ var _react = __webpack_require__(2);
 
 var defaultOptions = {
   componentWillUnmount: false
-};
 
-// Lifted from https://github.com/sindresorhus/p-reduce
-// Thanks @sindresorhus!
-/* eslint-disable no-console */
+  // Lifted from https://github.com/sindresorhus/p-reduce
+  // Thanks @sindresorhus!
+}; /* eslint-disable no-console */
 
 // Inspired by the awesome work done by the Apollo team.
 // See https://github.com/apollostack/react-apollo/blob/master/src/server.ts
@@ -152,7 +177,7 @@ function reactTreeWalker(element, visitor, context) {
   var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : defaultOptions;
 
   return new Promise(function (resolve) {
-    var doVisit = function doVisit(getChildren, visitorResult, childContext, isChildren) {
+    var doVisit = function doVisit(getChildren, visitorResult, childContext) {
       var doTraverse = function doTraverse(shouldContinue) {
         if (!shouldContinue) {
           // We recieved a false, which indicates a desire to stop traversal.
@@ -165,11 +190,11 @@ function reactTreeWalker(element, visitor, context) {
         if (child == null) {
           // If no children then we can't traverse.  We've reached the leaf.
           resolve();
-        } else if (isChildren) {
+        } else if (_react.Children.count(child)) {
           // If its a react Children collection we need to breadth-first
           // traverse each of them.
           var mapper = function mapper(aChild) {
-            return aChild ? reactTreeWalker(aChild, visitor, theChildContext) : undefined;
+            return aChild ? reactTreeWalker(aChild, visitor, theChildContext, options) : undefined;
           };
           // pMapSeries allows us to do depth-first traversal. Thanks @sindresorhus!
           pMapSeries(_react.Children.map(child, function (cur) {
@@ -177,7 +202,7 @@ function reactTreeWalker(element, visitor, context) {
           }), mapper).then(resolve);
         } else {
           // Otherwise we pass the individual child to the next recursion.
-          reactTreeWalker(child, visitor, theChildContext).then(resolve);
+          reactTreeWalker(child, visitor, theChildContext, options).then(resolve);
         }
       };
 
@@ -261,42 +286,13 @@ function reactTreeWalker(element, visitor, context) {
       // This must be a basic element, such as a string or dom node.
       doVisit(function () {
         return element.props && element.props.children ? element.props.children : undefined;
-      }, visitor(element, null, context), context, true);
+      }, visitor(element, null, context), context);
     }
   }).catch(function (err) {
     // We don't want errors to be swallowed!
     console.error('Error walking your react tree');
     console.error(err);
   });
-}
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = asyncBootstrapper;
-
-var _reactTreeWalker = __webpack_require__(0);
-
-var _reactTreeWalker2 = _interopRequireDefault(_reactTreeWalker);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function asyncBootstrapper(app, options) {
-  var visitor = function visitor(element, instance) {
-    if (instance && typeof instance.asyncBootstrap === 'function') {
-      return instance.asyncBootstrap();
-    }
-    return true;
-  };
-
-  return (0, _reactTreeWalker2.default)(app, visitor, {}, options);
 }
 
 /***/ }),
