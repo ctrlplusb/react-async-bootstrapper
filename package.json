@@ -47,6 +47,7 @@
     "enzyme-to-json": "^3.1.2",
     "eslint": "^4.8.0",
     "eslint-config-airbnb": "^16.0.0",
+    "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
@@ -89,7 +90,7 @@
       "node": true,
       "jest": true
     },
-    "extends": "airbnb",
+    "extends": ["airbnb", "prettier"],
     "rules": {
       "array-callback-return": 0,
       "arrow-parens": ["error", "as-needed"],
@@ -109,6 +110,7 @@
       "react/sort-comp": 0
     }
   },
+  "eslintIgnore": ["node_modules/", "commonjs/", "coverage/", "umd/"],
   "prettier": {
     "semi": false,
     "singleQuote": true,
