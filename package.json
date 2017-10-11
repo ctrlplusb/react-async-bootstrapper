@@ -1,6 +1,6 @@
 {
   "name": "react-async-bootstrapper",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description":
     "Provides the ability to execute async bootstrapper functions within your React element tree.",
   "license": "MIT",
