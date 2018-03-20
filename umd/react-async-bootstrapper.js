@@ -94,7 +94,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function asyncBootstrapper(app, options) {
   var visitor = function visitor(element, instance) {
     if (instance && typeof instance.asyncBootstrap === 'function') {
-      return instance.asyncBootstrap();
+      return instance.asyncBootstrap(options);
     }
     return true;
   };
