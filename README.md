@@ -1,6 +1,6 @@
 # react-async-bootstrapper 👢
 
-Execute a bootstrap method on your React/Preact components. Useful for data prefetching and other activities.
+Execute a `bootstrap` method on your React/Preact components. Useful for data prefetching and other activities.
 
 [![npm](https://img.shields.io/npm/v/react-async-bootstrapper.svg?style=flat-square)](http://npm.im/react-async-bootstrapper)
 [![MIT License](https://img.shields.io/npm/l/react-async-bootstrapper.svg?style=flat-square)](http://opensource.org/licenses/MIT)
@@ -16,7 +16,7 @@ Execute a bootstrap method on your React/Preact components. Useful for data pref
 
 This library is a simple implementation of [`react-tree-walker`](https://github.com/ctrlplusb/react-tree-walker), allowing you to attach a `bootstrap` method to your React/Preact "class" components. I would highly recommend you review `react-tree-walkers` documentation so as to gain more familiarity with what is being wrapped up by `react-bootstrapper`.
 
-I have created this implementation that responds to a `bootstrap` method to allow me to have a standard implementation that would allow for interop between multiple activities requiring a bootstrapping process. For example I have create [`react-async-component`](https://github.com/ctrlplusb/react-async-component) which provides code splitting support, and [`react-jobs`](https://github.com/ctrlplusb/react-jobs) which provides a mechanism to executed data fetching. Both use this library allowing for a single bootstrapping parse to be executed for the needs of both.
+I have created this implementation that responds to a `bootstrap` method to allow me to have a standard implementation that would allow for interop between multiple packages requiring a bootstrapping process. For example I have create [`react-async-component`](https://github.com/ctrlplusb/react-async-component) which provides code splitting support, and [`react-jobs`](https://github.com/ctrlplusb/react-jobs) which enables data fetching. Both packages use this library to allow for a single bootstrapping parse satisfying the needs of both.
 
 ## Simple Example
 
