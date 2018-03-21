@@ -1,10 +1,10 @@
 {
   "name": "react-async-bootstrapper",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description":
-    "Provides the ability to execute async bootstrapper functions within your React element tree.",
+    "Execute a bootstrap method on your React/Preact components. Useful for data prefetching and other activities.",
   "license": "MIT",
-  "main": "commonjs/index.js",
+  "main": "dist/react-async-bootstrapper.js",
   "files": ["*.js", "*.md", "dist"],
   "repository": {
     "type": "git",
@@ -15,8 +15,7 @@
   "keywords": ["library"],
   "scripts": {
     "build": "node ./tools/scripts/build.js",
-    "clean":
-      "rimraf ./commonjs && rimraf ./umd && rimraf ./coverage && rimraf ./umd",
+    "clean": "rimraf ./dist && rimraf ./coverage",
     "lint": "eslint src",
     "precommit": "lint-staged && npm run test",
     "prepublish": "npm run build",
@@ -56,22 +55,22 @@
     "gzip-size": "^4.0.0",
     "husky": "^0.14.3",
     "in-publish": "2.0.0",
-    "jest": "^21.2.1",
-    "lint-staged": "^4.2.3",
+    "jest": "^22.4.2",
+    "lint-staged": "^7.0.0",
     "prettier": "^1.7.4",
     "pretty-bytes": "4.0.2",
     "ramda": "^0.25.0",
     "react": "^16.0.0",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.0.0",
-    "readline-sync": "1.4.7",
+    "readline-sync": "1.4.9",
     "rimraf": "^2.6.2",
-    "rollup": "^0.56.5",
+    "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-uglify": "^3.0.0"
   },
   "dependencies": {
-    "react-tree-walker": "^2.1.3"
+    "react-tree-walker": "^4.0.2"
   },
   "jest": {
     "collectCoverageFrom": ["src/**/*.{js,jsx}"],
