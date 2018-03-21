@@ -14,16 +14,17 @@ Provides the ability to execute async bootstrapper functions within your React e
 
 ## Introduction
 
-This library is an abstraction of [`react-tree-walker`](https://github.com/ctrlplusb/react-tree-walker), that allows you to attach an `asyncBootstrap` member to your React components.
+This library is an abstraction of [`react-tree-walker`](https://github.com/ctrlplusb/react-tree-walker), that allows you to attach an `asyncBootstrap` method to your React "class" components.
 
-Within the `asyncBootstrap` you can do any work/bootstrapping that you like and then return a `Promise` that should resolve to either `true` (which indicates back to the bootstrapping process that it should continue down the current branch of your application in order to locate and resolve any nested `asyncBootstrap` instances), or `false` (which indicates that traversal of the current branch of your application can stop).
+Within the `asyncBootstrap` you can do any asynchronous work you like (e.g. fetching data) that you like, returning a `Promise` to indicate when the asynchronous work has completed.
 
 ## Naive Example
 
 ```jsx
 import asyncBootstrapper from 'react-async-bootstrapper'
 
-// Don't do this, do a proper imp
+// Our super naive global state. Don't copy this, it's just illustrative. You'd
+// likely want to use something
 const globalStateManager = {
   products: {},
 }
@@ -32,11 +33,10 @@ class Product extends Component {
   // 👇
   asyncBootstrap() {
     if (globalStateManager.products[this.props.productId]) {
-      // Already have data, just return true to allow nested 
-      // asyncBootstrap instances to be located/resolved
-      return true
+      // Already have data
+      return
     }
-  
+
     // Fetch our product and load up our state
     return fetch(`/api/products/${this.props.productId}`)
       .then((response) => {

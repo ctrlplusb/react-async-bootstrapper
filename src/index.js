@@ -5,7 +5,6 @@ export default function asyncBootstrapper(app, options) {
     if (instance && typeof instance.asyncBootstrap === 'function') {
       return instance.asyncBootstrap()
     }
-    return true
   }
 
   return reactTreeWalker(app, visitor, {}, options)
