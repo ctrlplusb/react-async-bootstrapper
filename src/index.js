@@ -1,7 +1,9 @@
+/* eslint-disable no-console */
+
 import reactTreeWalker from 'react-tree-walker'
 
 const warnmsg =
-  'Deprecation notice: you are using the deprecated "asyncBootsrap" for "react-async-bootstrapper", please rename these to "bootstrap"'
+  '"react-async-bootstrapper" deprecation notice: please rename your "asyncBootsrap" methods to "bootstrap"'
 
 export default function asyncBootstrapper(app, options, context = {}) {
   const visitor = (element, instance) => {
@@ -14,6 +16,7 @@ export default function asyncBootstrapper(app, options, context = {}) {
         ? instance.bootstrap()
         : console.log(warnmsg) || instance.asyncBootstrap()
     }
+    return undefined
   }
 
   return reactTreeWalker(app, visitor, context, options)
