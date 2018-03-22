@@ -5,6 +5,10 @@ import reactTreeWalker from 'react-tree-walker'
 const warnmsg =
   '"react-async-bootstrapper" deprecation notice: please rename your "asyncBootsrap" methods to "bootstrap"'
 
+const defaultContext = {
+  reactAsyncBootstrapperRunning: true,
+}
+
 export default function asyncBootstrapper(app, options, context = {}) {
   const visitor = (element, instance) => {
     if (
@@ -19,5 +23,10 @@ export default function asyncBootstrapper(app, options, context = {}) {
     return undefined
   }
 
-  return reactTreeWalker(app, visitor, context, options)
+  return reactTreeWalker(
+    app,
+    visitor,
+    Object.assign({}, context, defaultContext),
+    options,
+  )
 }

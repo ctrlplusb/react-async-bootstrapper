@@ -22,7 +22,7 @@ describe('asyncBootstrapper()', () => {
   class NewAPI extends Component {
     bootstrap() {
       values.push(this.props.id)
-      actualContext = this.context.isBootstrapping
+      actualContext = this.context
       return true
     }
 
@@ -53,8 +53,11 @@ describe('asyncBootstrapper()', () => {
     ))
 
   it('new API', () =>
-    asyncBootstrapper(app(NewAPI), null, { isBootstrapping: true }).then(() => {
+    asyncBootstrapper(app(NewAPI), null, { bespokeContext: true }).then(() => {
       expect(values).toEqual([1, 2, 4, 3])
-      expect(actualContext).toBe(true)
+      expect(actualContext).toEqual({
+        bespokeContext: true,
+        reactAsyncBootstrapperRunning: true,
+      })
     }))
 })
