@@ -1,18 +1,23 @@
 {
   "name": "react-async-bootstrapper",
   "version": "2.1.0",
-  "description":
-    "Execute a bootstrap method on your React/Preact components. Useful for data prefetching and other activities.",
+  "description": "Execute a bootstrap method on your React/Preact components. Useful for data prefetching and other activities.",
   "license": "MIT",
   "main": "dist/react-async-bootstrapper.js",
-  "files": ["*.js", "*.md", "dist"],
+  "files": [
+    "*.js",
+    "*.md",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ctrlplusb/react-async-bootstrapper.git"
   },
   "homepage": "https://github.com/ctrlplusb/react-async-bootstrapper#readme",
   "author": "Sean Matheson <sean@ctrlplusb.com>",
-  "keywords": ["library"],
+  "keywords": [
+    "library"
+  ],
   "scripts": {
     "build": "node ./tools/scripts/build.js",
     "clean": "rimraf ./dist && rimraf ./coverage",
@@ -32,7 +37,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
-    "babel-jest": "^21.2.0",
+    "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.2",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-polyfill": "^6.26.0",
@@ -42,11 +47,11 @@
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
     "change-case": "^3.0.2",
-    "codecov": "^2.3.0",
+    "codecov": "^3.0.0",
     "cross-env": "^5.0.5",
     "enzyme": "^3.1.0",
     "enzyme-to-json": "^3.1.2",
-    "eslint": "^4.8.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.0.0",
     "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-import": "^2.7.0",
@@ -55,7 +60,7 @@
     "gzip-size": "^4.0.0",
     "husky": "^0.14.3",
     "in-publish": "2.0.0",
-    "jest": "^22.4.2",
+    "jest": "^22.4.3",
     "lint-staged": "^7.0.0",
     "prettier": "^1.7.4",
     "pretty-bytes": "4.0.2",
@@ -73,9 +78,15 @@
     "react-tree-walker": "^4.0.2"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
-    "snapshotSerializers": ["<rootDir>/node_modules/enzyme-to-json/serializer"],
-    "testPathIgnorePatterns": ["<rootDir>/(coverage|dist|node_modules|tools)/"]
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/(coverage|dist|node_modules|tools)/"
+    ]
   },
   "eslintConfig": {
     "root": true,
@@ -86,7 +97,10 @@
       "node": true,
       "jest": true
     },
-    "extends": ["airbnb", "prettier"],
+    "extends": [
+      "airbnb",
+      "prettier"
+    ],
     "rules": {
       "camelcase": 0,
       "import/prefer-default-export": 0,
@@ -95,19 +109,29 @@
       "no-underscore-dangle": 0,
       "react/no-array-index-key": 0,
       "react/react-in-jsx-scope": 0,
-      "semi": [2, "never"],
+      "semi": [
+        2,
+        "never"
+      ],
       "react/forbid-prop-types": 0,
       "react/jsx-filename-extension": 0,
       "react/sort-comp": 0
     }
   },
-  "eslintIgnore": ["node_modules/", "dist/", "coverage/"],
+  "eslintIgnore": [
+    "node_modules/",
+    "dist/",
+    "coverage/"
+  ],
   "prettier": {
     "semi": false,
     "singleQuote": true,
     "trailingComma": "all"
   },
   "lint-staged": {
-    "*.js": ["prettier --write \"src/**/*.js\"", "git add"]
+    "*.js": [
+      "prettier --write \"src/**/*.js\"",
+      "git add"
+    ]
   }
 }
