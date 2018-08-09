@@ -1,6 +1,6 @@
 {
   "name": "react-async-bootstrapper",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Execute a bootstrap method on your React/Preact components. Useful for data prefetching and other activities.",
   "license": "MIT",
   "main": "dist/react-async-bootstrapper.js",
