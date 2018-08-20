@@ -3,7 +3,7 @@
 import reactTreeWalker from 'react-tree-walker'
 
 const warnmsg =
-  '"react-async-bootstrapper" deprecation notice: please rename your "asyncBootsrap" methods to "bootstrap"'
+  '"react-async-bootstrapper" deprecation notice: please rename your "asyncBootstrap" methods to "bootstrap"'
 
 const defaultContext = {
   reactAsyncBootstrapperRunning: true,
